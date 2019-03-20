@@ -1,0 +1,12 @@
+<!--
+  Todo: Show Id, Title and Author of the post 
+  Add a button which deletes the Post.
+-->
+<ul>
+  <li>Post id: {{showPost.id}}</li>
+  <li>Post title: {{showPost.title}}</li>
+  <li>Post author: {{showPost.author}}</li>
+</ul>
+<button type="button" (click)="delete(showPost.id)">Delete Post</button>
+
+

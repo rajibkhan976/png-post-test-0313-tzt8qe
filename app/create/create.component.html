@@ -1,0 +1,36 @@
+<button (click)="toggleForm()">
+  {{getButtonText()}}
+</button>
+
+<form *ngIf="showForm" #postForm="ngForm" (ngSubmit)="create(model.value)">
+  <!-- 
+    Todo: Create form fields for a Post using two-way-binding aka "ngModel" for a Post instance. Only Author and Title should be present.
+    Should validate that they are both required, and a minimun length of 3 chars.
+  -->
+  <div>
+    <label for="title">Title: </label>
+  <input id="title" type="text" name="title" [(ngModel)]="model.title" #title="ngModel" required minlength="3">
+  <div *ngIf="title.invalid && (title.dirty || title.touched)">
+    <div *ngIf="title.errors.required">
+      Title is required.
+    </div>
+    <div *ngIf="title.errors.minlength">
+      Title must be at least 3 characters long.
+    </div>
+  </div>
+  </div>
+  <div>
+    <label for="author">Author: </label>
+    <input id="author" type="text" required name="author" [(ngModel)]="model.author" #author="ngModel" required minlength="3">
+    <div *ngIf="author.invalid && (author.dirty || author.touched)">
+    <div *ngIf="author.errors.required">
+      Author is required.
+    </div>
+    <div *ngIf="author.errors.minlength">
+      Author must be at least 3 characters long.
+    </div>
+  </div>
+  </div>
+  <br>
+  <button [disabled]="!postForm.valid">Create Post</button>
+</form>

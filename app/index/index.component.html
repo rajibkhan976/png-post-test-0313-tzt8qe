@@ -1,0 +1,7 @@
+<!-- Todo: Create a list with *ngFor for posts fetched from API --->
+<app-create></app-create>
+<ul *ngFor="let post of posts">
+  <li>
+  <a routerLink="/show" routerLinkActive="active" (click)="navigate(post.title)" > {{post.title}}</a>
+  </li>
+</ul>
