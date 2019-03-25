@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-show',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ShowComponent implements OnInit {
 
-  showPost: any[];
+  showPost: Array<Post> = [];
 
   constructor(private _postService: PostService,
    private _route: ActivatedRoute,
