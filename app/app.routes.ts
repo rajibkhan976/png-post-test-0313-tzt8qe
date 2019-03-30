@@ -9,6 +9,10 @@ const routes: Routes = [
     component: IndexComponent
   },
   {
+    path: 'index',
+    component: IndexComponent
+  },
+  {
     path: 'show/:id',
     component: ShowComponent
   }

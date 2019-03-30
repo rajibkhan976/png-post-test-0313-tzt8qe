@@ -33,7 +33,11 @@ export class ShowComponent implements OnInit {
   delete(postId: number) {
     // Todo: Delete the post via PostService and then redirect to home
     this._postService.delete(postId).subscribe(
-      () => alert("Post deleted successfully!")
+      () => {
+        this._router.navigate(['/index']);
+        alert("Post deleted successfully!");
+      }
+      
     );
   }
 }
