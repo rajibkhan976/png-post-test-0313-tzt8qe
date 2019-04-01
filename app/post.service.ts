@@ -57,7 +57,6 @@ export class PostService {
   }
 
   private _mapToPost(postBody: any): Post {
-    
     const post = new Post(postBody.title, postBody.author, postBody.id);
     //Todo map to id, author and title.
     return post;
