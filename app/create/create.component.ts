@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   showForm: boolean = false;
-  model: Post = new Post('','','');
+  model: Post = new Post('','', undefined);
   posts: Array<Post> = [];
 
 constructor(private _postService: PostService, private _router: Router) {
