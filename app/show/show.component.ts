@@ -10,7 +10,7 @@ import { Post } from '../post.model';
 })
 export class ShowComponent implements OnInit {
 
-  showPost: Array<Post> = [];
+  showPost: any = [];
 
   constructor(private _postService: PostService,
    private _route: ActivatedRoute,
