@@ -36,7 +36,7 @@ export class PostService {
     );
   }
 
-  create(post: Post) : Observable<Post> {
+  create(post: Post) : Observable<object> {
     /* 
     * Should POST like this 
     * {
@@ -50,7 +50,7 @@ export class PostService {
     return this._http.post(this.baseUrl, post);
   }
 
-  delete(post: Post) : Observable<null> {
+  delete(post: Post) : Observable<object> {
     // Todo: DELETE /post/post.id
     // If it's successful, there will be no response body. 
     return this._http.delete(this.baseUrl + post);
