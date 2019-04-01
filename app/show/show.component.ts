@@ -30,7 +30,7 @@ export class ShowComponent implements OnInit {
     })
   }
 
-  delete(postId: number) {
+  delete(postId) {
     // Todo: Delete the post via PostService and then redirect to home
     this._postService.delete(postId).subscribe(
       () => {
